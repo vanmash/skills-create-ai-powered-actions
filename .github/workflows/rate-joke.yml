@@ -24,7 +24,7 @@ jobs:
           joke: ${{ github.event.comment.body }}
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Update comment
-        if: fromJSON(steps.rate-joke.outputs.result).is_joke == true
+        # if: fromJSON(steps.rate-joke.outputs.result).is_joke == true
         uses: peter-evans/create-or-update-comment@v5
         with:
           comment-id: ${{ github.event.comment.id }}
